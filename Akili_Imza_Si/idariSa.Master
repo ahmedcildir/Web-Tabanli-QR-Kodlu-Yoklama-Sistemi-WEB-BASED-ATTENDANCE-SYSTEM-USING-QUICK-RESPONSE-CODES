@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="idariSa.master.cs" Inherits="Akili_Imza_Si.idariSa" %>
+
+<!DOCTYPE html>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<%-- Fügür ekleme --%>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>İmza Sistyemi</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background: #ffffff
+        }
+
+        @media (min-width: 1200px ) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+    </style>
+    <form id="form2" runat="server">
+        <nav class="navbar sticky-top navbar-expand-sm navbar-light navbar-dark " style="background-color: #141946">
+            &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+                     <a class="navbar-brand" href="idarihome.aspx">
+                         <font face="Times" size="5" color="#ffffff"><i class="fas fa-edit"></i> İmza Sistemi</font>
+                     </a>
+            <%--<div class="form-inline">
+                        <asp:TextBox ID="txtarama" class="form-control mr-sm-4" runat="server" Width="300" placeholder="Arama..."></asp:TextBox>
+                        <asp:Button ID="btnara" class="btn btn-outline-secondary" runat="server" Text="Ara" />
+                     </div>--%>
+        </nav>
+        <br />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12" col-dark>
+                    <div class="card">
+                        <div class="card-header text-xl-center" style="background-color: #167af5">
+
+                            <asp:Image ID="imFoto" runat="server" class="rounded-circle " Height="100" Width="100" />
+
+                        </div>
+
+                        <div class="card-body text-center">
+                            <asp:Label ID="labAdSoyad" Class="text-center" runat="server" Text="Ad Soyad" Font-Names="Javanese Text" Font-Size="Larger" ForeColor="Blue"></asp:Label>
+                            <br />
+
+                            <p class="card-text text-center"><font face="Times" size="5"><asp:Image ID="Image1" runat="server" ImageUrl="Forms/images/lo2.png" Height="50px" Width="200px"></asp:Image></font></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <%--<a href="#" ><i class="fas fa-qrcode"></i> İmzaları Kontrol Et</a>--%>
+                                <a class="nav-link" href="DersAtama.aspx" role="button"><i class="fas fa-clipboard-check"></i>&emsp;Ders Atama</a>
+                                <%--<div class="dropdown-menu">
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="DersAtama.aspx">Ders Atama</a>
+                                </div>--%>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-book"></i>&emsp;Ders & Dö. İşlemleri</a>
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="idariSinifListesi.aspx"><i class="far fa-file-alt"></i> <i class="fas fa-angle-double-right"></i>&emsp;Sınıf Listesi</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="Duyrular.aspx"><i class="far fa-comment-alt"></i> <i class="fas fa-angle-double-right"></i>&emsp;Duyru Yayınla</a>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="far fa-sticky-note"></i>&emsp;Diğer İşlemleri</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="idariProfil.aspx"><i class="far fa-user"></i> <i class="fas fa-angle-double-right"></i>&emsp;Profilim</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="idariSifreGuncelleme.aspx"><i class="fas fa-user-lock"></i> <i class="fas fa-angle-double-right"></i>&emsp;Şife Değiştir</a>
+                                    <div class="dropdown-divider"></div>
+                                    <%--<a class="dropdown-item" href="FotografGuncelleme.aspx">Fotoğraf Güncelle</a>--%>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <asp:Button ID="cikis" runat="server" class="btn btn-outline-primary btn-sm" Text="Güvenli Çıkış" OnClick="cikis_Click" />
+                            <%--<asp:Button runat="server" Visible="false" ID="btnVisible" OnClick="btnVisible_Click" />--%>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <div class="col-lg-9 col-md-6 col-sm-12">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <%-- hedar --%>
+            <div class="card-header  w-100 ">
+                <div class="row">
+                    <div class="col-sm">
+                        <h6 align="center">Telif Hakkı © 2019 AHMED ÇILDIR </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,211 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AkademisyenSa.master.cs" Inherits="Akili_Imza_Si.Forms.AkademisyenSa" %>
+
+<!DOCTYPE html>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<%-- Fügür ekleme --%>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>İmza Sistyemi</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background: #ffffff
+        }
+
+        @media (min-width: 1200px ) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+    </style>
+    <form id="form2" runat="server">
+        <nav class="navbar sticky-top navbar-expand-sm navbar-light navbar-dark " style="background-color: #141946">
+            &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+                     <a class="navbar-brand" href="home.aspx">
+                         <font face="Times" size="5" color="#ffffff"><i class="fas fa-edit"></i> İmza Sistemi</font>
+                     </a>
+            <%--<div class="form-inline">
+                        <asp:TextBox ID="txtarama" class="form-control mr-sm-4" runat="server" Width="300" placeholder="Arama..."></asp:TextBox>
+                        <asp:Button ID="btnara" class="btn btn-outline-secondary" runat="server" Text="Ara" />
+                     </div>--%>
+        </nav>
+        <br />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12" col-dark>
+                    <div class="card">
+                        <div class="card-header text-xl-center" style="background-color: #167af5">
+
+                            <asp:Image ID="imFoto" runat="server" class="rounded-circle " Height="100" Width="100" />
+
+                        </div>
+
+                        <div class="card-body text-center">
+                            <asp:Label ID="labAdSoyad" Class="text-center" runat="server" Text="Ad Soyad" Font-Names="Javanese Text" Font-Size="Larger" ForeColor="Blue"></asp:Label>
+                            <br />
+
+                            <p class="card-text text-center"><font face="Times" size="5"><asp:Image ID="Image1" runat="server" ImageUrl="Forms/images/lo2.png" Height="50px" Width="200px"></asp:Image></font></p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-qrcode"></i>&emsp;İmza İşlemleri</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="imzaUret.aspx"><i class="fas fa-pencil-alt"></i><i class="fas fa-angle-double-right"></i>&nbsp;İmza al</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="Elleimzagirisi.aspx"><i class="far fa-plus-square"></i><i class="fas fa-angle-double-right"></i>&nbsp;E-İmza Girişi</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="staj.aspx"><i class="far fa-plus-square"></i><i class="fas fa-angle-double-right"></i>&nbsp;Stajiyer yoklaması</a>
+                                     <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="stajdevamsizligi.aspx"><i class="far fa-plus-square"></i><i class="fas fa-angle-double-right"></i>&nbsp;yoklama listesi</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="imzakontrol.aspx"><i class="far fa-clipboard"></i><i class="fas fa-angle-double-right"></i>&nbsp;İmzaları Kontrol Et</a>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-book"></i>&emsp;Ders & Dö. İşlemleri</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="AkDuyruYayinla.aspx"><i class="far fa-comment-alt"></i><i class="fas fa-angle-double-right"></i>&nbsp;Duyru Yayınla</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="SinifListesi.aspx"><i class="far fa-file-alt"></i><i class="fas fa-angle-double-right"></i>&nbsp;Sınıf Listesi</a>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="far fa-sticky-note"></i>&emsp;Diğer İşlemleri</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="Profil.aspx"><i class="far fa-user"></i><i class="fas fa-angle-double-right"></i>&nbsp;Profilim</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="Sifreguncelle.aspx"><i class="fas fa-user-lock"></i><i class="fas fa-angle-double-right"></i>&nbsp;Şife Değiştir</a>
+                                    <div class="dropdown-divider"></div>
+                                    <%--                                    <a class="dropdown-item" href="FotografGuncelleme.aspx">Fotoğraf Güncelle</a>--%>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <asp:Button ID="Button1" runat="server" class="btn btn-outline-primary btn-sm" Text="Güvenli Çıkış" OnClick="Button1_Click" />
+                        </div>
+                    </div>
+
+
+                    <%-- Menü Başlangiç --%>
+                    <%-- <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header text-center" id="headingThree">
+                                <h5 class="mb-0">
+                                    <img src="images/prof.png" width="90" height="90" alt="..." class="img-thumbnail">
+                                    <br /><br />
+                                    <asp:Label ID="labAdSoyad" runat="server" Text="Label">Ad Soyad</asp:Label><br />
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <font face="tahoma" size="1">Diğer işlemler</font>
+                                    </button>
+
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+
+                                <div class="card-body">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-qrcode"></i>İmza İşlemleri</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="imzaUret.aspx">İmza al</a>
+                                            <a class="dropdown-item" href="#">Elle İmza Girişi</a>
+                                            <a class="dropdown-item" href="SinifListesi.aspx">Sınıf Listesi</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">İmzaları Kontrol Et</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fab fa-wpforms"></i>Genel İşlemler</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">...</a>
+                                            <a class="dropdown-item" href="#">...</a>
+                                            <a class="dropdown-item" href="#">...</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-book"></i>Ders & Dö. İşlemleri</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">...</a>
+                                            <a class="dropdown-item" href="#">...</a>
+                                            <a class="dropdown-item" href="#">...</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="far fa-clone"></i>Form İşlemleri</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">..</a>
+                                            <a class="dropdown-item" href="#">..</a>
+                                            <a class="dropdown-item" href="#">..</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">..</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="far fa-sticky-note"></i>Diğer İşlemleri</a>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">..</a>
+                                            <a class="dropdown-item" href="#">..</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Oturumu Kapat</a>
+                                        </div>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>--%>
+                    <%-- Menü Bitiş --%>
+                </div>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <%-- hedar --%>
+            <div class="card-header  w-100 ">
+                <div class="row">
+                    <div class="col-sm">
+                        <h6 align="center">Telif Hakkı © 2019 AHMED ÇILDIR </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

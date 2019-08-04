@@ -1,0 +1,181 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Ogrimza.aspx.cs" Inherits="Akili_Imza_Si.Ogrenci.WebForm1" %>
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<html class="loading" lang="en" data-textdirection="ltr">
+<head>
+    <title>Öğrenci İmza Sistemi</title>
+    <link rel="apple-touch-icon" href="../web/theme-assets/images/ico/apple-icon-120.png">
+    <%--<link rel="shortcut icon" type="image/x-icon" href="#">--%>
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
+    <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../web/theme-assets/css/vendors.css">
+    <link rel="stylesheet" type="text/css" href="../web/theme-assets/css/app-lite.css">
+    <link rel="stylesheet" type="text/css" href="../web/theme-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../web/theme-assets/css/core/colors/palette-gradient.css">
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+</head>
+<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-color="bg-gradient-x-purple-blue" data-col="2-columns">
+    <form id="form2" runat="server">
+        <!-- fixed-top-->
+        <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
+            <div class="navbar-wrapper">
+                <div class="navbar-container content">
+                    <div class="collapse navbar-collapse show" id="navbar-mobile">
+                        <ul class="nav navbar-nav mr-auto float-left">
+                            <li class="nav-item d-block d-md-none">
+                                <a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu"></i></a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav float-right">
+                            <li class="dropdown dropdown-notification nav-item">
+                                <a class="nav-link nav-link-label" href="#" data-toggle="dropdown"><i class="ficon ft-mail"><span class="badge bg-green"></span></i></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div class="arrow_box_right">
+                                        <a class="dropdown-item" href="#"><i class="ft-book"></i>Posta oku</a>
+                                        <a class="dropdown-item" href="#"><i class="ft-bookmark"></i>Sonra Oku</a>
+                                        <a class="dropdown-item" href="#"><i class="ft-check-square"></i>Hepsini oku</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"><span class="avatar avatar-online">
+                                <asp:Image ID="imFoto" runat="server" />
+                                <i></i></span></a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <div class="arrow_box_right">
+                                        <a class="dropdown-item" href="#"><span class="avatar avatar-online">
+                                            <asp:Image ID="imFoto1" runat="server" />
+                                            <asp:Label ID="labAdSoyad" runat="server"></asp:Label>
+                                            <%--<span class="user-name text-bold-700 ml-1" id="AdSoyad" runat="server">
+                                                
+                                            </span>--%></span></a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="OgrProfil.aspx?bk=Profilim"><i class="ft-user"></i>Profilim</a>
+                                        <%--<a class="dropdown-item" href="#"><i class="ft-mail"></i>Ayarlar</a>--%>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" onclose="OtrumKapat()" href="OgrLogin.aspx"><i class="ft-power"></i>Otrumu kapat</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+        <div class="main-menu menu-fixed menu-light menu-accordion menu-shadow " data-scroll-to-active="true" data-img="theme-assets/images/backgrounds/02.jpg">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav flex-row">
+                    <li class="nav-item mr-auto"><a class="navbar-brand" href="OgrAnaSayfa.aspx?bk=Siirt Üniversitesi">
+                        <img class="brand-logo" alt=".." src="../web/theme-assets/images/logo/lo.png" />
+                        <h3 class="brand-text">Siirt Üniversitesi</h3>
+                    </a></li>
+                    <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
+                </ul>
+            </div>
+            <div class="main-menu-content">
+                <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                    <li>
+                        <hr />
+                        <h5>&nbsp;&nbsp;<i class="fas fa-edit"> ÖĞRENCİ İMZA SİSTEMİ</i></h5>
+                        <hr />
+                    </li>
+                    <li>
+                        <a><i class="fa fa-desktop"></i>Genel İşlemler <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="OgrAlinanDersler.aspx?bk=Alınan Dersler">Alınan Dersler</a></li>
+                            <%--<li><a href="#">Sınıf Listesi</a></li>--%>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-table"></i>Ders & Dö.İşlemleri <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <%--<li><a href="#">Ders Kaydı</a></li>--%>
+                            <li><a href="Devamsizlik.aspx?bk=Devamsızlık Durumu">Devamsızlık Durumu</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-edit"></i>İmza İşlemleri <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="Ogrimza.aspx">İmzala</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-clone"></i>Ayarla <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="OgrProfil.aspx?bk=Profil Güncelle">Profil Güncelle</a></li>
+                            <li><a href="OgrSifer.aspx?bk=Şifre Değiştir">Şifre Değiştir</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="navigation-background">
+                <img class="navigation-background" src="../web/theme-assets/images/backgrounds/22.jpg" />
+            </div>
+        </div>
+
+        <%--Sayfa İçeriği --%>
+        <div class="app-content content">
+            <div class="content-wrapper">
+                <div class="content-wrapper-before"></div>
+                <div class="content-header row">
+                    <div class="content-header-left col-md-4 col-12 mb-2">
+                        <h3 class="content-header-title">İmza Sayfası</h3>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <%-- not --%>
+                    <div class="card text-white bg-primary">
+                        <div class="card-body text-center">
+                            <video class="col-lg-8 col-md-12 col-sm-12 " id="preview"></video>
+                        </div>
+                    </div>
+                    <div class="alert alert-warning alert-dismissible fade show">
+                        <strong>Uyarı!</strong> 
+                        <asp:Label ID="lblBilgi" runat="server" ForeColor="Red"></asp:Label>
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </div>
+                    <asp:Button ID="Button1" runat="server" Text="İmzala" class="btn btn-outline-info btn-block btn-lg" OnClick="Button1_Click" />
+                </div>
+                <%-- QR barkod okuma javascript Kodu Başlangıç--%>
+                <script>
+                    let scanner = new Instascan.Scanner(
+                        {
+                            video: document.getElementById('preview')
+                        }
+                    );
+                    scanner.addListener('scan', function (content) {
+                        alert('İmzayı Tamamlamak İçin İmzala Butonuna Tıklayın Lütfen..');
+                        var hdnfldVariable = document.getElementById('HiddenField1');
+                        hdnfldVariable.value = content;
+                    });
+                    Instascan.Camera.getCameras().then(cameras => {
+                        if (cameras.length > 0) {
+                            scanner.start(cameras[0]);
+                        } else {
+                            console.error("Cihazda kamera yok !");
+                        }
+                    });
+                </script>
+                <%--QR barkod okuma javascript Kodu Bitiş--%>
+                <asp:HiddenField ID="HiddenField1" runat="server" />
+            </div>
+        </div>
+        <!-- ////////////////////////////////////////////////////////////////////////////-->
+        <footer class="footer footer-static footer-light navbar-border navbar-shadow">
+            <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2">
+                <span class="float-md-left d-block d-md-inline-block">Telif Hakkı © 2019 AHMED ÇILDIR<a class="text-bold-800 grey darken-2" href="#" target="_blank"> <i class="fas fa-angle-double-right"></i></a></span>
+            </div>
+        </footer>
+        <script src="../web/theme-assets/js/qrcode.js"></script>
+        <script src="../web/theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+        <script src="../web/theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
+        <script src="../web/theme-assets/js/core/app-lite.js" type="text/javascript"></script>
+    </form>
+
+</body>
+
+</html>
